@@ -1,24 +1,11 @@
-import React, { useState } from "react";
-
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import CalendarContainer from "./components/Calendar/CalendarContainer";
-import ListContainer from "./components/List/ListContainer";
+import React from "react";
+import CalendarContainer from "./components/CalendarContainer";
 
 const App = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <CalendarContainer />
-        </Route>
-        <Route path="/list">
-          <ListContainer />
-        </Route>
-        <Route path="*">
-          <div>Path error: 404</div>
-        </Route>
-      </Switch>
-    </Router>
+    <div>
+      <CalendarContainer />
+    </div>
   );
 };
 
