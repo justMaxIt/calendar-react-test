@@ -4,6 +4,7 @@ import "react-calendar/dist/Calendar.css";
 import "./Style.css";
 import Navbar from "./Navbar";
 import Shedule from "./Shedule";
+import TVset from "./../img/Tel.png";
 
 const url = "http://api.tvmaze.com/schedule?country=US&date=";
 
@@ -32,8 +33,10 @@ const CalendarContainer = () => {
       {!toggle ? (
         <div className="main">
           <div className="middle">
-            <img src={""} alt={"img"} />
-            For a list of serials, please choose a necessary month and day
+            <img src={TVset} alt={"img-TV"} />
+            <h4>
+              For a list of serials, please, choose a necessary month and day
+            </h4>
           </div>
           <Calendar
             onChange={onChange}
