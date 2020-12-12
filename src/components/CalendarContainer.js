@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import "./CalendarStyle.css";
+import "./Style.css";
 import Navbar from "./Navbar";
 import Shedule from "./Shedule";
 
@@ -28,9 +28,9 @@ const CalendarContainer = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar toggle={toggle} setToggle={setToggle} />
       {!toggle ? (
-        <div>
+        <div className="main">
           <div className="middle">
             <img src={""} alt={"img"} />
             For a list of serials, please choose a necessary month and day
@@ -40,7 +40,7 @@ const CalendarContainer = () => {
             value={date}
             view={"month"}
             calendarType={"US"}
-            className="calendar"
+            className={"calendar"}
             navigationLabel={({ date }) => {
               return `${date.toLocaleDateString()}`;
             }}

@@ -66,3 +66,42 @@ button.react-calendar__tile--active {
     color: #474747;
     border: 1.5px solid #C3134C;
 }
+
+.navbar {
+    background-image: url("./../img/ornament.jpg");
+    background-size: 100%;
+    opacity: 0.3;
+    height: 60px;
+    z-index: -1;
+}
+
+.navbar-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-content button {
+    color: #C3134C;
+    border: none;
+    background: none;
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    font-size: 23px;
+}
+
+.navbar-content button:focus {
+    outline: none;
+}
+
+.navbar-title {
+    color: #474747;
+    font-weight: 700;
+    margin-top: 10px;
+}
