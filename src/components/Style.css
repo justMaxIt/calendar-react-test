@@ -79,11 +79,16 @@
 }
 
 .react-calendar__navigation__label {
-    pointer-events: none
+    pointer-events: none;
+    color: #3D3D3D;
+}
+
+.react-calendar__navigation button {
+    font-size: 17px;
 }
 
 .react-calendar__navigation button:enabled:hover, .react-calendar__navigation button:enabled:focus {
-    background-color: #e6e6e6;
+    background-color: #F1F1F1;
 }
 
 .react-calendar__month-view__weekdays {
@@ -105,7 +110,7 @@
     border: 1.5px solid #D5D6DA;
     height: 50px;
     font-size: 16px;
-}
+    }
 
 .react-calendar__tile--now {
     background: none;
@@ -131,3 +136,8 @@ button.react-calendar__tile--active {
     color: #474747;
     border: 1.5px solid #C3134C;
 }
+
+
+
+
+.shedule img{width: 100px;}

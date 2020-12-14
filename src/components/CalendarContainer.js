@@ -14,18 +14,38 @@ const CalendarContainer = () => {
   const [toggle, setToggle] = useState(false);
 
   let searchDate = date.toISOString().slice(0, 10);
+  const onChange = (newDate) => {
+    setDate(newDate);
+    setToggle(true);
+  };
+  let fullDate = convertDate(date);
+  function convertDate(date) {
+    let months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "Jule",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    return (
+      date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear()
+    );
+  }
+
+  console.log(fullDate);
   useEffect(() => {
     fetch(`${url}${searchDate}`)
       .then((res) => res.json())
       .then((res) => setData(res))
       .catch((error) => console.error(error));
   }, [searchDate]);
-  console.log(data);
-
-  const onChange = (newDate) => {
-    setDate(newDate);
-    setToggle(true);
-  };
 
   return (
     <>
@@ -45,14 +65,14 @@ const CalendarContainer = () => {
             calendarType={"US"}
             className={"calendar"}
             navigationLabel={({ date }) => {
-              return `${date.toLocaleDateString()}`;
+              return `${convertDate(date).slice(2, -5)}`;
             }}
             next2Label={null}
             prev2Label={null}
           />
         </div>
       ) : (
-        <Shedule data={data} date={date} />
+        <Shedule data={data} fullDate={fullDate} />
       )}{" "}
     </>
   );

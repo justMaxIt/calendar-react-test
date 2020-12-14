@@ -1,27 +1,18 @@
 import React from "react";
 
+import Serial from "./Serial";
 const Shedule = (props) => {
-  const { data, date } = props;
-  console.log(props.date);
+  const { data, fullDate } = props;
+  console.log(props.data);
   return (
     <>
-      <div>
-        <div>{date.toString()}</div>
+      <div className="shedule">
+        <div>{fullDate}</div>
         <ul className="shedule">
           {data.map((el, ind) => (
-            <li key={el.id}>
-              <span>
-                <h4>{el.season}</h4>
-                <h4>{el.number}</h4>
-                <h4>{el.show.name}</h4>
-                <h4>{el.show.premiered}</h4>
-                <img src={el.show.image.medium} alt="img" />
-              </span>
-            </li>
+            <Serial key={el.id} el={el} />
           ))}
         </ul>
-
-        {/* {data[0].id} */}
       </div>
     </>
   );
