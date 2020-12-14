@@ -157,8 +157,55 @@ button.react-calendar__tile--active {
     ;
 }
 
-.shedule img {
-    width: 100px;
+.serial {
+    display: flex;
+    margin: 25px 15px;
+    max-height: 100px
+}
+
+.serial img {
+    width: 70px;
+    border-radius: 2px;
+    box-shadow: 1px 2px 7px 3px rgba(209, 211, 214, 0.67);
+    -webkit-box-shadow: 1px 2px 7px 3px rgba(209, 211, 214, 0.67);
+    -moz-box-shadow: 1px 2px 7px 3px rgba(209, 211, 214, 0.67);
+}
+
+.serial-content {
+    display: block;
+    width: 100%;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.serial-name {
+    font-weight: normal;
+    font-size: 16px;
+    color: #1d1c1c;
+}
+
+.serial-premiered {
+    color: #D5D6DA;
+    font-size: 15px;
+    flex: 1 0 auto;
+}
+
+.serial-series {
+    flex: 0 0 auto;
+    width: 70%;
+    height: 40px;
+    background-color: #F1F1F1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 15px;
+    color: #807d7d;
+}
+
+.serial-series span {
+    margin: 5px;
 }
 
 .no-serials {

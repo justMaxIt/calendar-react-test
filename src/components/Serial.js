@@ -5,20 +5,25 @@ import noPoster from "./../img/no-poster.png";
 const Serial = (props) => {
   const { el } = props;
   return (
-    <>
-      <li>
-        <h4>{el.id}</h4>
-        <h4>{el.season}</h4>
-        <h4>{el.number}</h4>
-        <h4>{el.show.name}</h4>
-        <h4>{el.show.premiered}</h4>
-        {el.show.image ? (
-          <img src={el.show.image.medium} alt="img" />
-        ) : (
-          <img src={noPoster} alt="img" />
-        )}
-      </li>
-    </>
+    <div className="serial">
+      {el.show.image ? (
+        <img src={el.show.image.medium} alt="img" />
+      ) : (
+        <img src={noPoster} alt="img" />
+      )}
+
+      <div className="serial-content">
+        <div className="serial-name">{el.show.name}</div>
+        <div className="serial-premiered">
+          {el.show.premiered.slice(0, 4)}
+          {el.show.status === "Running" ? " - ..." : null}
+        </div>
+        <div className="serial-series">
+          <span>Season: {el.season}</span>
+          <span>Episode: {el.number}</span>
+        </div>
+      </div>
+    </div>
   );
 };
 export default Serial;
