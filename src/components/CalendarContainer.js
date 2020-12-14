@@ -12,6 +12,7 @@ const CalendarContainer = () => {
   const [date, setDate] = useState(new Date());
   const [data, setData] = useState([]);
   const [toggle, setToggle] = useState(false);
+  const [serialAmount, setSerialAmount] = useState(1);
 
   let searchDate = date.toISOString().slice(0, 10);
   const onChange = (newDate) => {
@@ -39,7 +40,7 @@ const CalendarContainer = () => {
     );
   }
 
-  console.log(fullDate);
+  // console.log(fullDate);
   useEffect(() => {
     fetch(`${url}${searchDate}`)
       .then((res) => res.json())
@@ -72,7 +73,13 @@ const CalendarContainer = () => {
           />
         </div>
       ) : (
-        <Shedule data={data} fullDate={fullDate} />
+        <Shedule
+          data={data}
+          fullDate={fullDate}
+          serialAmount={serialAmount}
+          setSerialAmount={setSerialAmount}
+          setToggle={setToggle}
+        />
       )}{" "}
     </>
   );

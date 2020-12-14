@@ -1,18 +1,30 @@
 import React from "react";
-
+import ContentButton from "./ContentButton";
 import Serial from "./Serial";
+import "./Style.css";
+
 const Shedule = (props) => {
-  const { data, fullDate } = props;
+  const { setSerialAmount, data, fullDate, serialAmount, setToggle } = props;
   console.log(props.data);
   return (
     <>
       <div className="shedule">
-        <div>{fullDate}</div>
-        <ul className="shedule">
-          {data.map((el, ind) => (
-            <Serial key={el.id} el={el} />
-          ))}
+        <div className="shedule-day" onClick={() => setToggle(false)}>
+          {fullDate}
+        </div>
+
+        <ul className="shedule-content">
+          {data
+            ?.filter((e, ind) => ind <= serialAmount)
+            .map((el) => (
+              <Serial key={el.id} el={el} />
+            ))}
         </ul>
+        <ContentButton
+          setSerialAmount={setSerialAmount}
+          serialAmount={serialAmount}
+          data={data}
+        />
       </div>
     </>
   );

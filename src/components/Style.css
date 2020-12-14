@@ -110,7 +110,7 @@
     border: 1.5px solid #D5D6DA;
     height: 50px;
     font-size: 16px;
-    }
+}
 
 .react-calendar__tile--now {
     background: none;
@@ -137,7 +137,37 @@ button.react-calendar__tile--active {
     border: 1.5px solid #C3134C;
 }
 
+.shedule {
+    width: 100%;
+}
 
+.shedule-day {
+    width: 100%;
+    height: 45px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    color: #3D3D3D;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #D5D6DA;
+    ;
+}
 
+.shedule img {
+    width: 100px;
+}
 
-.shedule img{width: 100px;}
+.no-serials {
+    height: 100%;
+    margin-top: 100px;
+    color: #3D3D3D;
+    font-weight: 700;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
