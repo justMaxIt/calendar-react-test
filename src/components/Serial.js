@@ -1,17 +1,12 @@
 import React from "react";
 import "./Style.css";
-import noPoster from "./../img/no-poster.png";
+import SerialImage from "./SerialImage";
 
 const Serial = (props) => {
   const { el } = props;
   return (
     <div className="serial">
-      {el.show.image ? (
-        <img src={el.show.image.medium} alt="img" />
-      ) : (
-        <img src={noPoster} alt="img" />
-      )}
-
+      <SerialImage el={el} />
       <div className="serial-content">
         <div className="serial-name">{el.show.name}</div>
         <div className="serial-premiered">

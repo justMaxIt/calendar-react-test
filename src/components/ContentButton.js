@@ -6,16 +6,22 @@ const ContentButton = (props) => {
   const { setSerialAmount, serialAmount, data } = props;
 
   return (
-    <>
+    <div className="content-but">
       {data.length > 2 ? (
-        <div className="sheduleButton">
+        <div className="content-button">
           {serialAmount === 1 ? (
             <button onClick={() => setSerialAmount(data.length - 1)}>
-              more {data.length - 2} serials <BsChevronDown />
+              {data.length - 2} more serials{" "}
+              <span>
+                <BsChevronDown />
+              </span>
             </button>
           ) : (
             <button onClick={() => setSerialAmount(1)}>
-              show main <BsChevronUp />
+              Show main{" "}
+              <span>
+                <BsChevronUp />
+              </span>
             </button>
           )}
         </div>
@@ -26,7 +32,7 @@ const ContentButton = (props) => {
           ) : null}
         </div>
       )}
-    </>
+    </div>
   );
 };
 export default ContentButton;

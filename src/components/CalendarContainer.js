@@ -40,13 +40,15 @@ const CalendarContainer = () => {
     );
   }
 
-  // console.log(fullDate);
   useEffect(() => {
     fetch(`${url}${searchDate}`)
       .then((res) => res.json())
       .then((res) => setData(res))
       .catch((error) => console.error(error));
-  }, [searchDate]);
+    if (!toggle) {
+      setSerialAmount(1);
+    }
+  }, [searchDate, toggle]);
 
   return (
     <>
@@ -74,11 +76,11 @@ const CalendarContainer = () => {
         </div>
       ) : (
         <Shedule
-          data={data}
-          fullDate={fullDate}
-          serialAmount={serialAmount}
           setSerialAmount={setSerialAmount}
           setToggle={setToggle}
+          data={data}
+          serialAmount={serialAmount}
+          fullDate={fullDate}
         />
       )}{" "}
     </>

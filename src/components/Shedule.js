@@ -4,7 +4,7 @@ import Serial from "./Serial";
 import "./Style.css";
 
 const Shedule = (props) => {
-  const { setSerialAmount, data, fullDate, serialAmount, setToggle } = props;
+  const { setToggle, data, fullDate, serialAmount } = props;
   console.log(props.data);
   return (
     <div className="shedule">
@@ -20,7 +20,7 @@ const Shedule = (props) => {
           ))}
       </div>
       <ContentButton
-        setSerialAmount={setSerialAmount}
+        setSerialAmount={props.setSerialAmount}
         serialAmount={serialAmount}
         data={data}
       />
